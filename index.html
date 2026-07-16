@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Catálogo Interactivo</title>
+</head>
+
+<body class="m-0 p-0 bg-black">
+
+    <!-- Grid: 4 filas en móvil (25vh c/u), 2x2 en PC (50vh c/u) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 w-full h-screen">
+
+        <!-- ================= SECCIÓN 1 ================= -->
+        <article class="salon-card relative w-full h-[25vh] md:h-[50vh] overflow-hidden group cursor-pointer"
+            onclick="openSalon(this)">
+            <!-- Vista de cuadrícula -->
+            <img src="images/windt/IMG_3383.HEIC"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+                class="grid-overlay absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/60">
+                <h2 class="text-white text-3xl md:text-4xl font-bold tracking-widest uppercase">Salón Windt</h2>
+            </div>
+
+            <!-- Contenido Expandido (Oculto) -->
+            <div class="expanded-content hidden bg-white min-h-screen w-full pb-20">
+                <!-- Botón Cerrar -->
+                <button onclick="closeSalon(event, this)"
+                    class="fixed top-6 right-6 z-50 bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Hero Expandido -->
+                <div class="w-full h-[40vh] md:h-[50vh] relative">
+                    <img src="images/windt/IMG_3384.HEIC" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 md:p-12">
+                        <h2 class="text-white text-4xl md:text-6xl font-bold uppercase">Salón Windt</h2>
+                    </div>
+                </div>
+
+                <!-- Características y Galería -->
+                <div class="max-w-5xl mx-auto px-6 py-12 cursor-default" onclick="event.stopPropagation()">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Características</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">Brindamos servicio de catering, planificación
+                                de eventos desde celebraciones de cumpleaños a eventos corporativos.</p>
+                            <ul class="grid grid-cols-2 gap-4 text-gray-700 font-medium">
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Capacidad: 400
+                                    Pax</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Mantenimiento
+                                </li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Limpieza</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Aire
+                                    Acondicionado</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Parqueo</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Planta</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Ascensor</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Seguridad</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Luz 24h</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-600">✦</span> Agua Potable
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/3 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                            <span class="block text-sm text-gray-500 font-bold uppercase mb-1">Inversión</span>
+                            <span class="text-4xl font-black text-gray-900">RD$35,000</span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Galería del Salón</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="images/windt/IMG_3385.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+                        <img src="images/windt/IMG_3386.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+                        <img src="images/windt/IMG_3387.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm hover:opacity-90 transition">
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= SECCIÓN 2 ================= -->
+        <article class="salon-card relative w-full h-[25vh] md:h-[50vh] overflow-hidden group cursor-pointer"
+            onclick="openSalon(this)">
+            <img src="images/limoncillo/IMG_3398.HEIC"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+                class="grid-overlay absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/60">
+                <h2 class="text-white text-3xl md:text-4xl font-bold tracking-widest uppercase">Salón Limoncillo</h2>
+            </div>
+
+            <div class="expanded-content hidden bg-white min-h-screen w-full pb-20">
+                <button onclick="closeSalon(event, this)"
+                    class="fixed top-6 right-6 z-50 bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <div class="w-full h-[40vh] md:h-[50vh] relative">
+                    <img src="/images/limoncillo/IMG_3399.HEIC" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 md:p-12">
+                        <h2 class="text-white text-4xl md:text-6xl font-bold uppercase">Salón Limoncillo</h2>
+                    </div>
+                </div>
+                <div class="max-w-5xl mx-auto px-6 py-12 cursor-default" onclick="event.stopPropagation()">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Características</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">Brindamos servicio de catering, planificación
+                                de eventos desde celebraciones de cumpleaños a eventos corporativos.</p>
+                            <ul class="grid grid-cols-2 gap-4 text-gray-700 font-medium">
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Capacidad: 120
+                                    Pax</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Mantenimiento
+                                </li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Limpieza</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Aire
+                                    Acondicionado</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Parqueo</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Planta</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Ascensor</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Seguridad</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Luz 24h</li>
+                                <li class="flex items-center gap-2"><span class="text-green-600">✦</span> Agua Potable
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/3 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                            <span class="text-4xl font-black text-gray-900">RD$17,000</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="images/limoncillo/IMG_3400.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm">
+                        <img src="/images/limoncillo/IMG_3402.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm">
+                        <img src="images/limoncillo/IMG_3403.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm">
+
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= SECCIÓN 3 ================= -->
+        <article class="salon-card relative w-full h-[25vh] md:h-[50vh] overflow-hidden group cursor-pointer"
+            onclick="openSalon(this)">
+            <img src="images/cineforum/IMG_3409.HEIC"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+                class="grid-overlay absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/60">
+                <h2 class="text-white text-3xl md:text-4xl font-bold tracking-widest uppercase">Cinefórum</h2>
+            </div>
+
+            <div class="expanded-content hidden bg-white min-h-screen w-full pb-20">
+                <button onclick="closeSalon(event, this)"
+                    class="fixed top-6 right-6 z-50 bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <div class="w-full h-[40vh] md:h-[50vh] relative">
+                    <img src="images/cineforum/IMG_3410.HEIC" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 md:p-12">
+                        <h2 class="text-white text-4xl md:text-6xl font-bold uppercase">Cinefórum</h2>
+                    </div>
+                </div>
+                <div class="max-w-5xl mx-auto px-6 py-12 cursor-default" onclick="event.stopPropagation()">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Características</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">Brindamos servicio de catering, planificación
+                                de eventos desde celebraciones de cumpleaños a eventos corporativos.</p>
+                            <ul class="grid grid-cols-2 gap-4 text-gray-700 font-medium">
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Capacidad: 60
+                                    Pax</li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Mantenimiento
+                                </li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Limpieza</li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Aire
+                                    Acondicionado</li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Parqueo</li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Planta</li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Ascensor</li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Seguridad
+                                </li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Luz 24h</li>
+                                <li class="flex items-center gap-2"><span class="text-purple-600">✦</span> Agua Potable
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/3 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                            <span class="text-4xl font-black text-gray-900">RD$12,000</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <img src="/images/cineforum/IMG_3411.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm">
+                        <img src="/images/cineforum/IMG_3413.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm">
+                        <img src="/images/cineforum/IMG_3414.HEIC"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm">
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ================= SECCIÓN 4 ================= -->
+        <article class="salon-card relative w-full h-[25vh] md:h-[50vh] overflow-hidden group cursor-pointer"
+            onclick="openSalon(this)">
+            <img src="images/restaurante/restaurante.jpeg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+                class="grid-overlay absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-black/60">
+                <h2 class="text-white text-3xl md:text-4xl font-bold tracking-widest uppercase">Restaurante</h2>
+            </div>
+
+            <div class="expanded-content hidden bg-white min-h-screen w-full pb-20">
+                <button onclick="closeSalon(event, this)"
+                    class="fixed top-6 right-6 z-50 bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+                <div class="w-full h-[40vh] md:h-[50vh] relative">
+                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f502acb?auto=format&fit=crop&w=1200&q=80"
+                        class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6 md:p-12">
+                        <h2 class="text-white text-4xl md:text-6xl font-bold uppercase">Restaurante</h2>
+                    </div>
+                </div>
+                <div class="max-w-5xl mx-auto px-6 py-12 cursor-default" onclick="event.stopPropagation()">
+                    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Características</h3>
+                            <p class="text-gray-600 leading-relaxed mb-6">Brindamos servicio de catering, planificación
+                                de eventos desde celebraciones de cumpleaños a eventos corporativos.</p>
+                            <ul class="grid grid-cols-2 gap-4 text-gray-700 font-medium">
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Capacidad: 80
+                                    Pax</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Mantenimiento
+                                </li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Limpieza</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Aire
+                                    Acondicionado</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Parqueo</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Planta</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Ascensor</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Seguridad</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Luz 24h</li>
+                                <li class="flex items-center gap-2"><span class="text-red-900">✦</span> Agua Potable
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/3 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                            <span class="text-4xl font-black text-gray-900">RD$18,000</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-48 object-cover rounded-xl shadow-sm">
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Script de Lógica -->
+    <script>
+        function openSalon(element) {
+            // Si ya está abierto, no hacer nada
+            if (element.classList.contains('fixed')) return;
+
+            // Expandir a fixed screen
+            element.classList.remove('relative', 'h-[25vh]', 'md:h-[50vh]', 'group', 'cursor-pointer');
+            element.classList.add('fixed', 'inset-0', 'z-50', 'h-screen', 'overflow-y-auto', 'cursor-default');
+
+            // Ocultar elementos de la cuadrícula base
+            element.querySelector('.grid-overlay').classList.add('hidden');
+            element.querySelector(':scope > img').classList.add('hidden');
+
+            // Mostrar contenido expandido
+            element.querySelector('.expanded-content').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // Deshabilitar scroll general
+        }
+
+        function closeSalon(event, btn) {
+            event.stopPropagation(); // Evitar disparar el onclick del contenedor principal
+
+            let element = btn.closest('.salon-card');
+
+            // Revertir clases de contenedor
+            element.classList.add('relative', 'h-[25vh]', 'md:h-[50vh]', 'group', 'cursor-pointer');
+            element.classList.remove('fixed', 'inset-0', 'z-50', 'h-screen', 'overflow-y-auto', 'cursor-default');
+
+            // Mostrar elementos de la cuadrícula base
+            element.querySelector('.grid-overlay').classList.remove('hidden');
+            element.querySelector(':scope > img').classList.remove('hidden');
+
+            // Ocultar contenido expandido
+            element.querySelector('.expanded-content').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden'); // Habilitar scroll general
+        }
+    </script>
+</body>
+
+</html>
