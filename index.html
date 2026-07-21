@@ -588,7 +588,7 @@
             <div class="expanded-content hidden bg-white min-h-screen w-full pb-20">
                 <!-- Botón Cerrar -->
                 <button onclick="closeSalon(event, this)"
-                    class="fixed top-6 right-6 z-50 bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
+                    class="fixed top-6 right-6 z-[200] bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
@@ -667,7 +667,7 @@
 
             <div class="expanded-content hidden bg-white min-h-screen w-full pb-20">
                 <button onclick="closeSalon(event, this)"
-                    class="fixed top-6 right-6 z-50 bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
+                    class="fixed top-6 right-6 z-[200] bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
@@ -733,7 +733,7 @@
 
             <div class="expanded-content hidden bg-white min-h-screen w-full pb-20">
                 <button onclick="closeSalon(event, this)"
-                    class="fixed top-6 right-6 z-50 bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
+                    class="fixed top-6 right-6 z-[200] bg-black/60 text-white p-3 rounded-full hover:bg-black/90 backdrop-blur-md transition">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
@@ -969,6 +969,10 @@
             // Mostrar contenido expandido
             element.querySelector('.expanded-content').classList.remove('hidden');
             document.body.classList.add('overflow-hidden'); // Deshabilitar scroll general
+
+            // Ocultar el header para que no tape el botón X
+            const header = document.getElementById('main-header');
+            if (header) header.style.display = 'none';
         }
 
         function closeSalon(event, btn) {
@@ -987,6 +991,10 @@
             // Ocultar contenido expandido
             element.querySelector('.expanded-content').classList.add('hidden');
             document.body.classList.remove('overflow-hidden'); // Habilitar scroll general
+
+            // Restaurar el header
+            const header = document.getElementById('main-header');
+            if (header) header.style.display = '';
         }
     </script>
 </body>
